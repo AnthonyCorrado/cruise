@@ -56,7 +56,7 @@
 </table>
 
 <div id="hourHolder">
-  <input type="range" id="hourSlider" min="27" max="107" value="40" step="1" orientation="vertical" />
+  <input type="range" id="hourSlider" min="27" max="107" value="27" step="1" orientation="vertical" />
 </div>
 
 <!--div style="height:200px; width:30px; overflow:auto;" id="scroller">
@@ -75,6 +75,7 @@
     isHighlightMode = false,
     highlightedLoc = null,
     deckCycler = null;
+    haveAddedText = false;
   var locations = [
     [7,20,509,203,573, "Grand Atrium"],
     [7,96,657,128,849, "Art Gallery"],
@@ -231,6 +232,12 @@
     changeDeck(9);
     changeHour(28);
     $.mobile.hidePageLoadingMsg();
+    if(!haveAddedText)
+    {
+      $("#deckSlider").next("div").append('<div class="rotate">deck&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>');
+      $("#hourSlider").next("div").append('<div class="rotate">hour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>');
+      haveAddedText = true;
+    }
   });
 
   $( window ).load(function() {
