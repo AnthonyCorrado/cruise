@@ -1,4 +1,8 @@
 Cruise::Application.routes.draw do
+  resources :locations
+
+  resources :activities
+
   root :to => "users#index"
   post '/' => "users#create"
   resources :friends

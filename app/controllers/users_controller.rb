@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     if @user.update(user_params.merge({is_user_updated: true}))
-      redirect_to users_path, notice: 'User was successfully updated.'
+      redirect_to edit_users_path(@user), notice: 'User was successfully updated.'
     end
   end
 

@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321192530) do
+ActiveRecord::Schema.define(version: 20140405150256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: true do |t|
+    t.string   "name"
+    t.integer  "day"
+    t.integer  "start_time"
+    t.integer  "end_time"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "activities", ["location_id"], name: "index_activities_on_location_id", using: :btree
 
   create_table "friends", force: true do |t|
     t.integer  "user_id"
@@ -24,6 +36,17 @@ ActiveRecord::Schema.define(version: 20140321192530) do
   end
 
   add_index "friends", ["user_id"], name: "index_friends_on_user_id", using: :btree
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.integer  "deck"
+    t.integer  "x"
+    t.integer  "y"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "room_types", force: true do |t|
     t.string   "name"

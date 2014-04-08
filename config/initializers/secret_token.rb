@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Cruise::Application.config.secret_key_base = '00dfbb520b1519e153f4fede891193b59be8969a4a0dfd6adbbd56bcd8d46c6e6be54ae5eb03e6a3e0ff6d9c249fcd067060d73197e2ed38e05fe4a574c40de4'
+Cruise::Application.config.secret_key_base = '2691a51e315740440a6644d0442abd03ddb4e2aaf617cee2e07eec69601a9c0804111243b99e640501b5112590bba83af5dfd2277eb619b28054c3178bfe4bcf'
